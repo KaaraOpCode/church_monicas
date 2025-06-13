@@ -10,7 +10,9 @@
   },
   "dependencies": {
     "express": "^5.1.0",
+    "framer-motion": "^12.17.3",
     "next": "15.3.3",
+    "next-intl": "^4.1.0",
     "react": "^19.1.0",
     "react-dom": "^19.0.0"
   },
