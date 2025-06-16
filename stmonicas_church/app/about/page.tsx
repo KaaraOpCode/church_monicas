@@ -91,17 +91,17 @@ export default function About() {
           <div className="max-w-6xl mx-auto px-4 text-center">
             <h2 className="text-3xl font-bold text-blue-800 mb-12">Our Catholic Values</h2>
             <div className="grid md:grid-cols-3 gap-8">
-              <Card title="Faith in Christ" image="/hero_one.svg">
+              <Card title="Faith in Christ" image="/hero_one.svg" href={''}>
                 <p>
                   We are guided by the teachings of the Church and nourished by the Word of God and the Eucharist.
                 </p>
               </Card>
-              <Card title="Sacramental Life" image="/hero_two.svg">
+              <Card title="Sacramental Life" image="/hero_two.svg" href={''}>
                 <p>
                   Through Baptism, Confirmation, the Eucharist, and other sacraments, we grow closer to God and one another.
                 </p>
               </Card>
-              <Card title="Community & Charity" image="/hero_five.svg">
+              <Card title="Community & Charity" image="/hero_five.svg" href={''}>
                 <p>
                   We reflect Christ’s love through mercy, outreach, and care for the vulnerable.
                 </p>
@@ -115,13 +115,13 @@ export default function About() {
           <div className="max-w-6xl mx-auto px-4 text-center">
             <h2 className="text-3xl font-bold text-gray-800 mb-12">Meet Our Pastoral Team</h2>
             <div className="grid md:grid-cols-3 gap-8">
-              <Card title="Fr. Emmanuel Mokhethi" image="/hero_two.svg">
+              <Card title="Fr. Emmanuel Mokhethi" image="/hero_two.svg" href={''}>
                 <p>Parish Priest – Shepherds the parish through the Sacraments and preaching of the Word.</p>
               </Card>
-              <Card title="Sr. Maria Thabiso" image="/hero_three.svg">
+              <Card title="Sr. Maria Thabiso" image="/hero_three.svg" href={''}>
                 <p>Parish Sister – Leads faith formation, youth ministry, and women’s fellowship.</p>
               </Card>
-              <Card title="Deacon Thabo Molefi" image="/hero_five.svg">
+              <Card title="Deacon Thabo Molefi" image="/hero_five.svg" href={''}>
                 <p>Permanent Deacon – Assists in liturgy, pastoral care, and community outreach.</p>
               </Card>
             </div>

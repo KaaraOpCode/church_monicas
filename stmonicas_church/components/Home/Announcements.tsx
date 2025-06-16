@@ -18,14 +18,14 @@ export default function Announcements() {
         </div>
 
         <div className="grid gap-8 md:grid-cols-2 animate-slide-up">
-          <Card title="Sunday Service Time Change" image="/hero_five.svg">
+          <Card title="Sunday Service Time Change" image="/hero_five.svg" href={''}>
             <p className="mb-2 text-sm text-gray-500 italic">June 10, 2025</p>
             <p className="text-gray-700">
               Starting next week, our Sunday services will begin at <strong>10:00 AM</strong> instead of 9:30 AM.
             </p>
           </Card>
 
-          <Card title="Community Outreach Program" image="/hero_four.svg">
+          <Card title="Community Outreach Program" image="/hero_four.svg" href={''}>
             <p className="mb-2 text-sm text-gray-500 italic">June 8, 2025</p>
             <p className="text-gray-700">
               Join us this Saturday for our monthly outreach at the local shelter from <strong>9 AM to 1 PM</strong>.

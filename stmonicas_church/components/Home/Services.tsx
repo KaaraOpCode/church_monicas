@@ -9,20 +9,20 @@ export default function Services() {
         <p className="text-gray-600 mt-2">Serving our community with heart and faith.</p>
       </div>
       <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto px-4">
-        <Card title="Sunday Worship" image="/hero_two.svg" alt="Sunday Worship">
+        <Card title="Sunday Worship" image="/hero_two.svg" alt="Sunday Worship" href={''}>
           <ul className="list-disc list-inside text-gray-700">
             <li>Morning Service: 10:00 AM</li>
             <li>Evening Service: 6:00 PM</li>
             <li>Sunday School: 9:00 AM</li>
           </ul>
         </Card>
-        <Card title="Bible Study" image="/hero_three.svg" alt="Bible Study">
+        <Card title="Bible Study" image="/hero_three.svg" alt="Bible Study" href={''}>
           <ul className="list-disc list-inside text-gray-700">
             <li>Wednesdays: 7:00 PM</li>
             <li>Fridays (Seniors): 10:00 AM</li>
           </ul>
         </Card>
-        <Card title="Community Outreach" image="/hero_four.svg" alt="Community Outreach">
+        <Card title="Community Outreach" image="/hero_four.svg" alt="Community Outreach" href={''}>
           <ul className="list-disc list-inside text-gray-700">
             <li>Food Pantry: Tuesdays 1–4 PM</li>
             <li>Homeless Ministry: Monthly</li>

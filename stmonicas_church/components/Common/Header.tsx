@@ -2,8 +2,8 @@
 
 import React, { useState } from 'react';
 import Link from 'next/link';
-import DarkModeToggle from '../DarkModeToggle';
 import { usePathname } from 'next/navigation';
+import DarkModeToggle from '../DarkModeToggle';
 
 const navItems = [
   { label: 'Home', href: '/' },
@@ -15,55 +15,48 @@ export default function Header() {
   const [isOpen, setIsOpen] = useState(false);
   const pathname = usePathname();
 
-  // Toggle mobile menu open/close
-  const toggleMenu = () => setIsOpen(!isOpen);
-
-  // Check if nav item is active
+  const toggleMenu = () => setIsOpen((prev) => !prev);
   const isActive = (href: string) => pathname === href;
 
   return (
-    <header className="bg-white dark:bg-gray-900 shadow-md sticky top-0 z-50">
+    <header className="bg-white dark:bg-gray-900 shadow-md sticky top-0 z-50 transition-all duration-300">
       <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
         {/* Logo */}
         <Link
           href="/"
-          className="text-2xl md:text-3xl font-bold tracking-tight text-gray-800 dark:text-gray-100"
-          onClick={() => setIsOpen(false)} // close menu on nav click
+          onClick={() => setIsOpen(false)}
+          className="text-3xl font-bold tracking-tight text-accent dark:text-amber-400 hover:opacity-90 transition-opacity"
         >
-          St. Monica&apos;s
+          St. Monica&apos;s Church
         </Link>
 
         {/* Desktop nav */}
-        <nav className="hidden md:block">
-          <ul className="flex space-x-8 text-base font-medium">
-            {navItems.map(({ label, href }) => (
-              <li key={href}>
-                <Link
-                  href={href}
-                  className={`${
-                    isActive(href)
-                      ? 'text-accent underline decoration-2 underline-offset-4'
-                      : 'text-gray-700 dark:text-gray-200 hover:text-accent dark:hover:text-amber-400'
-                  } transition-colors`}
-                  onClick={() => setIsOpen(false)}
-                >
-                  {label}
-                </Link>
-              </li>
-            ))}
-          </ul>
+        <nav className="hidden md:flex items-center space-x-8">
+          {navItems.map(({ label, href }) => (
+            <Link
+              key={href}
+              href={href}
+              className={`text-base font-medium transition-colors duration-200 ${
+                isActive(href)
+                  ? 'text-accent dark:text-amber-400 underline underline-offset-4'
+                  : 'text-gray-700 dark:text-gray-300 hover:text-accent dark:hover:text-amber-300'
+              }`}
+            >
+              {label}
+            </Link>
+          ))}
         </nav>
 
         {/* Right controls */}
         <div className="flex items-center space-x-4">
           <DarkModeToggle />
 
-          {/* Hamburger button - mobile only */}
+          {/* Hamburger button */}
           <button
             onClick={toggleMenu}
             aria-label={isOpen ? 'Close menu' : 'Open menu'}
             aria-expanded={isOpen}
-            className="md:hidden focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-accent text-gray-700 dark:text-gray-200"
+            className="md:hidden text-gray-700 dark:text-gray-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-accent"
           >
             {isOpen ? (
               <svg
@@ -92,20 +85,24 @@ export default function Header() {
         </div>
       </div>
 
-      {/* Mobile nav menu */}
-      {isOpen && (
-        <nav className="md:hidden bg-white dark:bg-gray-900 border-t border-gray-200 dark:border-gray-700">
-          <ul className="flex flex-col space-y-3 px-6 py-4">
+      {/* Mobile nav */}
+      <div
+        className={`md:hidden overflow-hidden transition-max-height duration-300 ease-in-out ${
+          isOpen ? 'max-h-96' : 'max-h-0'
+        }`}
+      >
+        <nav className="bg-white dark:bg-gray-900 border-t border-gray-200 dark:border-gray-700 shadow-inner">
+          <ul className="flex flex-col px-6 py-4 space-y-4">
             {navItems.map(({ label, href }) => (
               <li key={href}>
                 <Link
                   href={href}
-                  className={`block text-lg font-medium ${
-                    isActive(href)
-                      ? 'text-accent underline decoration-2 underline-offset-4'
-                      : 'text-gray-700 dark:text-gray-200 hover:text-accent dark:hover:text-amber-400'
-                  }`}
                   onClick={() => setIsOpen(false)}
+                  className={`block text-lg font-medium transition-colors ${
+                    isActive(href)
+                      ? 'text-accent dark:text-amber-400 underline underline-offset-4'
+                      : 'text-gray-800 dark:text-gray-200 hover:text-accent dark:hover:text-amber-300'
+                  }`}
                 >
                   {label}
                 </Link>
@@ -113,7 +110,7 @@ export default function Header() {
             ))}
           </ul>
         </nav>
-      )}
+      </div>
     </header>
   );
 }

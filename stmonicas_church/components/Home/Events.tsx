@@ -100,7 +100,7 @@ export default function Events() {
           }`}
         >
           {upcomingPageEvents.map((event) => (
-            <Card key={event.title} title={event.title} image={event.image} alt={event.alt}>
+            <Card key={event.title} title={event.title} image={event.image} alt={event.alt} href={''}>
               <p className="mb-2">{event.date}</p>
               <p>{event.description}</p>
             </Card>
@@ -141,7 +141,7 @@ export default function Events() {
           }`}
         >
           {previousPageEvents.map((event) => (
-            <Card key={event.title} title={event.title} image={event.image} alt={event.alt}>
+            <Card key={event.title} title={event.title} image={event.image} alt={event.alt} href={''}>
               <p className="mb-2">{event.date}</p>
               <p>{event.description}</p>
             </Card>

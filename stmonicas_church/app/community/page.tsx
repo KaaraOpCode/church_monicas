@@ -2,7 +2,6 @@
 
 import Head from 'next/head';
 import Image from 'next/image';
-import Link from 'next/link';
 import { FaSchool, FaClinicMedical, FaChurch, FaUsers, FaFemale, FaMale } from 'react-icons/fa';
 import Card from '@/components/Common/Card';
 import Header from '@/components/Common/Header';
@@ -38,12 +37,12 @@ export default function Community() {
               <p className="text-lg text-gray-700 mb-6">
                 Through education, health, and spiritual care, our ecosystem empowers every person in the community to flourish in faith and well-being.
               </p>
-              <Link
+              <a
                 href="#ecosystem"
                 className="inline-block bg-green-700 text-white py-2 px-6 rounded-full font-semibold hover:bg-green-800 transition"
               >
                 Explore the Ecosystem
-              </Link>
+              </a>
             </div>
             <div className="md:w-1/2 animate-slide-up">
               <Image
@@ -76,23 +75,17 @@ export default function Community() {
               {locations
                 .filter(loc => ['School', 'Clinic', 'Primary School'].includes(loc.type))
                 .map(({ name, href, image, alt, icon }) => (
-                  <Link
-                    href={href}
+                  <Card
                     key={name}
-                    className="block transform transition duration-300 hover:scale-105"
+                    title={name}
+                    image={image || '/default_location.svg'}
+                    alt={alt}
+                    icon={icon}
+                    badges={['Vital']}
+                    href={href}
                   >
-                    <Card
-                      title={name}
-                      image={image || '/default_location.svg'}
-                      alt={alt}
-                      icon={icon}
-                      badges={['Vital']}
-                      ctaText={`Visit ${name}`}
-                      ctaHref={href}
-                    >
-                      <p className="text-gray-700 mb-4">{`A vital ${name} supporting our community.`}</p>
-                    </Card>
-                  </Link>
+                    <p className="text-gray-700 mb-4">{`A vital ${name} supporting our community.`}</p>
+                  </Card>
                 ))}
             </div>
           </div>
@@ -113,8 +106,8 @@ export default function Community() {
               alt="Youth Fellowship"
               icon={<FaUsers />}
               badges={['Weekly', 'Fun']}
+              href="/youth-fellowship/join"
               ctaText="Join Youth"
-              ctaHref="/youth-fellowship/join"
             >
               <ul className="list-disc list-inside text-gray-700">
                 <li>Youth meetings every Friday at 6 PM</li>
@@ -128,8 +121,8 @@ export default function Community() {
               alt="Women's Ministry"
               icon={<FaFemale />}
               badges={['Monthly', 'Support']}
+              href="/womens-ministry/join"
               ctaText="Join Women"
-              ctaHref="/womens-ministry/join"
             >
               <ul className="list-disc list-inside text-gray-700">
                 <li>Monthly gatherings</li>
@@ -143,8 +136,8 @@ export default function Community() {
               alt="Men's Ministry"
               icon={<FaMale />}
               badges={['Weekly', 'Mentorship']}
+              href="/mens-ministry/join"
               ctaText="Join Men"
-              ctaHref="/mens-ministry/join"
             >
               <ul className="list-disc list-inside text-gray-700">
                 <li>Weekly Bible studies</li>
