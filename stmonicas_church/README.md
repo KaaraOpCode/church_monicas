@@ -1,3 +1,13 @@
+St. Monica’s Church Website
+This is a Next.js project for St. Monica’s Church, a community-focused website built to provide information about the church, events, community engagement, and donation options.
+
+The project was bootstrapped using create-next-app and utilizes modern Next.js features including optimized fonts and images.
+
+Features
+Responsive and accessible UI built with React and Tailwind CSS
+
+Dynamic events listing with pagination (Upcoming and Previous events)
+
 Community pages to connect members
 
 Donation options including Banks, Mobile Money (Mpesa/EcoCash), and Cryptocurrency (with QR codes)
