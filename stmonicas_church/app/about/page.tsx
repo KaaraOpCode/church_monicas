@@ -19,11 +19,12 @@ export default function About() {
       </Head>
 
       <Header />
+
       <main className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-purple-50 text-gray-800">
         {/* Hero Section */}
-        <section className="py-16 text-center px-4">
+        <section className="py-20 text-center px-4 bg-white">
           <div className="max-w-6xl mx-auto flex flex-col-reverse md:flex-row items-center gap-12">
-            <div className="md:w-1/2">
+            <div className="md:w-1/2 animate-fade-in">
               <h1 className="text-4xl md:text-5xl font-bold mb-6 text-blue-900">
                 Welcome to St. Monica&apos;s Roman Catholic Church
               </h1>
@@ -33,13 +34,13 @@ export default function About() {
               <div className="flex justify-center md:justify-start">
                 <Link
                   href="/#services"
-                  className="bg-blue-700 hover:bg-blue-800 text-white font-semibold py-3 px-6 rounded-lg shadow text-center"
+                  className="bg-blue-700 hover:bg-blue-800 text-white font-semibold py-3 px-6 rounded-full shadow text-center transition"
                 >
                   Mass Times & Services
                 </Link>
               </div>
             </div>
-            <div className="md:w-1/2">
+            <div className="md:w-1/2 animate-slide-up">
               <Image
                 src="/hero_three.svg"
                 alt="Catholic Community Worship"
@@ -75,7 +76,13 @@ export default function About() {
             <p className="text-gray-700 text-lg mb-6">
               To proclaim the Gospel of Jesus Christ, celebrate the Sacraments, and serve our local and global community in the love of God.
             </p>
-            <Image src="/hero_four.svg" alt="Mission and Worship" width={400} height={400} className="mx-auto" />
+            <Image
+              src="/hero_four.svg"
+              alt="Mission and Worship"
+              width={400}
+              height={400}
+              className="mx-auto"
+            />
           </div>
         </section>
 
@@ -112,7 +119,7 @@ export default function About() {
                 <p>Parish Priest – Shepherds the parish through the Sacraments and preaching of the Word.</p>
               </Card>
               <Card title="Sr. Maria Thabiso" image="/hero_three.svg">
-                <p>Parish Sister – Leads faith formation, youth ministry, and womens fellowship.</p>
+                <p>Parish Sister – Leads faith formation, youth ministry, and women’s fellowship.</p>
               </Card>
               <Card title="Deacon Thabo Molefi" image="/hero_five.svg">
                 <p>Permanent Deacon – Assists in liturgy, pastoral care, and community outreach.</p>
@@ -121,6 +128,7 @@ export default function About() {
           </div>
         </section>
       </main>
+
       <Footer />
     </>
   );
