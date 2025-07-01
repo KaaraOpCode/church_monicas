@@ -6,7 +6,18 @@
     "dev": "next dev --turbopack",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "start": "react-scripts start",
+
+ 
+    "build": "react-scripts build",
+
+
+    "test": "react-scripts test"
+
+
+    
+
   },
   "dependencies": {
     "express": "^5.1.0",
